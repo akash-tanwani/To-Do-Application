@@ -1,0 +1,39 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #f1f1f1;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+.add-list {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #fff;
+  align-items: center;
+  width: 40vw;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.add-list:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24),
+    0 1px 12px rgba(0, 0, 0, 0.14);
+}
+
+.add-list-title {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.add-list-icon {
+  font-size: 28px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
