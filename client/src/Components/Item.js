@@ -7,6 +7,7 @@ import "../Styles/Item.css";
 import Checkbox from "@material-ui/core/Checkbox";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
+import Chip from "@material-ui/core/Chip";
 
 export class Item extends Component {
   state = {
@@ -25,6 +26,20 @@ export class Item extends Component {
     this.props.api_updateItem(item);
     this.toggleEditMode();
   };
+
+  formatDate = (old_date) => {
+    let current_date = new Date(old_date)
+    let year = current_date.getFullYear();
+    let month = current_date.getMonth() + 1 < 10 ? "0" + (current_date.getMonth() + 1) : current_date.getMonth() + 1;
+    let date = current_date.getDate() < 10 ? "0" + current_date.getDate() : current_date.getDate();
+    let hours = current_date.getHours() < 10 ? "0" + current_date.getHours() : current_date.getHours();
+    let mins = current_date.getMinutes() < 10 ? "0" + current_date.getMinutes() : current_date.getMinutes();
+    let secs = current_date.getSeconds() < 10 ? "0" + current_date.getSeconds() : current_date.getSeconds();
+
+    return year + "-" + month + "-" + date + " | " + hours + ":" + mins + ":" + secs;
+  }
+
+
 
   render() {
     const {
@@ -86,6 +101,7 @@ export class Item extends Component {
             </button>
           </>
         )}
+        <Chip label={this.formatDate(listObject.createdAt)} variant="outlined" size="small" style={{ marginLeft: "1rem", fontSize: "10px" }} />
       </div>
     );
   }
